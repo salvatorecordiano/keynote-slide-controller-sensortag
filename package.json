@@ -1,0 +1,30 @@
+{
+  "name": "KeynoteSlideControllerSensorTag",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Use your smartphone and TI Sensor Tag as Keynote slide controller",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/salvatorecordiano/keynote-slide-controller-sensortag.git"
+  },
+  "dependencies": {
+    "body-parser": "~1.12.4",
+    "express": "~4.12.4",
+    "ejs": "~2.3.3",
+    "robotjs": "~0.2.1",
+    "sensortag": "~1.0.2"
+  },
+  "keywords": [
+    "node",
+    "presenter",
+    "smartphone presenter",
+    "slideshow",
+    "presentation"
+  ],
+  "author": "Salvatore Cordiano <github@parallel.it>",
+  "license": "MIT",
+  "readme": "README.md"
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= applicationName %></title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center"><h1><%= applicationName %></h1></div>
+          <div class="col-md-12">
+              <a class="btn btn-primary btn-lg" id="leftBtn" href="#">Left</a>
+          </div>
+          <div class="col-md-12">
+              <a class="btn btn-primary btn-lg" id="rightBtn" href="#">Right</a>
+          </div>
+        </div>
+    </div> <!-- /container -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+      .col-md-12
+      {
+        margin-bottom:45px;
+      }
+      .btn-primary
+      {
+        width:100%;
+        height:80px;
+        line-height:80px;
+        padding:0;
+      }
+    </style>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function() 
+      {
+          jQuery( "#leftBtn" ).click(function() {
+            executeCommand('left');
+          });
+          jQuery( "#rightBtn" ).click(function() {
+            executeCommand('right');
+          });
+      });
+      function executeCommand(command)
+      {
+        jQuery.ajax({
+            url: "/keyboard/" + command,
+            type: "GET",
+            dataType : "json",
+            success: function( json ) {},
+            error: function( xhr, status, errorThrown ) {}
+          });
+      }
+    </script>
+
+  </body>
+</html>
